@@ -9,20 +9,20 @@ public class SelectionSort {
 
     static int[] selectionSort(int[] array) {
         int minimum;
-        int currentMinimum = 0;
+        int currentMinimum;
         int number = 0;
 
         for (int i = 0; i < array.length; i++) {
             minimum = array[i];
             for (int j = 1; j < array.length; j++) {
                 if (array[j] < minimum) {
-                    minimum = array[j]; // tutaj przypisuje juz minimum i zanika wartosc array[j] - trzeba zmienic
                     currentMinimum = array[j];
+                    minimum = currentMinimum;
                 }
                 number = j;
             }
             array[number] = array[i];
-            array[i] = currentMinimum;
+            array[i] = minimum;
 
         }
 
