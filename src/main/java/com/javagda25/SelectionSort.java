@@ -2,7 +2,7 @@ package com.javagda25;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] array = {4, 2, 17, 9, 0};
+        int[] array = {4, 2, 17, 9, 0, -9};
 
         selectionSort(array);
     }
@@ -10,16 +10,17 @@ public class SelectionSort {
     static int[] selectionSort(int[] array) {
         int minimum;
         int currentMinimum;
-        int number = 0;
+        int number;
 
         for (int i = 0; i < array.length; i++) {
+            number = i;
             minimum = array[i];
-            for (int j = 1; j < array.length; j++) {
+            for (int j = i + 1; j < array.length; j++) {
                 if (array[j] < minimum) {
                     currentMinimum = array[j];
                     minimum = currentMinimum;
+                    number = j;
                 }
-                number = j;
             }
             array[number] = array[i];
             array[i] = minimum;
